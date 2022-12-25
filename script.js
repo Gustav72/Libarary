@@ -1,1 +1,9 @@
-    let i = "hi"
+let myLibrary = [];
+
+function Book() {
+
+}
+
+function addBookToLibrary() {
+    
+}
