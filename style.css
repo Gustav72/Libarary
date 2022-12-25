@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+
 :root {
     --darker: #1A1D33;
     --lighter: #105F82;
@@ -8,6 +11,8 @@ body {
     background-color: var(--darker);
     display: grid;
     grid-template-columns: 1fr 3fr;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .sidebar {
@@ -15,16 +20,47 @@ body {
     background-color: var(--lighter);
     color: white;
     height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    font-size: 20rem;
+.top {
+    display: flex;
+    font-size: 1.8rem;
+    margin-top: 0px;
+    padding-top: 0pxs;
+    gap: 10px;
 }
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.3rem;
+}
+
+input {
+    background-color: var(--darker);
+    border: none;
+    width: 300px;
+    color: white;
+    height: 1.5rem;
+}
+
+
+#radio {
+    display: block;
+} 
+
 
 #logo {
-    height: 100px;
-    fill: white;
-    stroke: white;
+    height: 80px;
+    align-self: center;
 }
 
 
