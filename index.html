@@ -28,13 +28,19 @@
                         <input id="pages" type="number" name="pages" min="0" max="99999" required>
                     </div>
                     <div id="radio">
-                        <label>Did you finish the book?</label><br>
-                        <input type="radio" id="yes" name="yes" value="yes">
-                        <label for="yes">Yes</label><br>
-                        <input type="radio" id="no" name="no" value="no">
-                        <label for="no">No</label><br>  
+                        <div>
+                            <label id="radio-label">Did you finish the book?</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="yes" name="yes" value="yes">
+                            <label for="yes">Yes</label><br>    
+                        </div>
+                        <div>
+                            <input type="radio" id="no" name="no" value="no">
+                            <label for="no">No</label><br>  
+                        </div>
                     </div>
-                <button type="submit"><h2>Add New Book</h2></button>
+                <button type="submit"><label for="submit">Add New Book</label></button>
         </form>
     </div>
     <div class="main">

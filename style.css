@@ -12,7 +12,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     font-family: 'Inter', sans-serif;
-
 }
 
 .sidebar {
@@ -21,6 +20,7 @@ body {
     color: white;
     height: 100vh;
     padding: 30px;
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -36,15 +36,25 @@ body {
 form > div {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin-top: 20px;
     gap: 10px;
 }
 
 #radio {
     display: block;
+    padding-bottom: 20px;
 }
 
-label {
+#radio > div > label{
+    font-size: 1.1rem;
+}
+
+#radio > div {
+    margin-bottom: 10PX;
+
+}
+
+label, #radio-label {
     font-size: 1.3rem;
 }
 
@@ -61,20 +71,18 @@ input {
     align-self: center;
 }
 
-
-#logo > p {
-    font-size: 1.2rem;
-}
-
 input[type="radio"] {
     margin-right: 5px;
+    margin-left: 20px;
     width: 18px;
+    vertical-align:text-bottom
+
 }
 
 button {
     background-color: var(--lightest);
-    border-radius: 10px;
     border: none;
+    padding: 15px;
 }
 
 .main {
