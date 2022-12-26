@@ -29,7 +29,7 @@ body {
     display: flex;
     font-size: 1.8rem;
     margin-top: 0px;
-    padding-top: 0pxs;
+    padding-top: 0px;
     gap: 10px;
 }
 
@@ -38,6 +38,10 @@ form > div {
     flex-direction: column;
     margin: 10px;
     gap: 10px;
+}
+
+#radio {
+    display: block;
 }
 
 label {
@@ -52,18 +56,20 @@ input {
     height: 1.5rem;
 }
 
-
-#radio {
-    display: block;
-} 
-
-
 #logo {
     height: 80px;
     align-self: center;
 }
 
 
+#logo > p {
+    font-size: 1.2rem;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    width: 18px;
+}
 
 button {
     background-color: var(--lightest);
