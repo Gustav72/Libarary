@@ -19,8 +19,7 @@ body {
     background-color: var(--lighter);
     color: white;
     height: 100vh;
-    padding: 30px;
-    padding-top: 0px;
+    padding: 0px 30px;
     display: flex;
     flex-direction: column;
 }
@@ -45,8 +44,8 @@ form > div {
     padding-bottom: 20px;
 }
 
-#radio > div > label{
-    font-size: 1.1rem;
+#radio > div > label:not(:first-child){
+    font-size: 1rem;
 }
 
 #radio > div {
@@ -56,7 +55,9 @@ form > div {
 
 label, #radio-label {
     font-size: 1.3rem;
+    
 }
+
 
 input {
     background-color: var(--darker);
@@ -75,16 +76,50 @@ input[type="radio"] {
     margin-right: 5px;
     margin-left: 20px;
     width: 18px;
-    vertical-align:text-bottom
+    vertical-align: text-bottom;
 
 }
 
 button {
     background-color: var(--lightest);
     border: none;
-    padding: 15px;
+    padding: 5px 10px;
+    height: 50px;
+    color: white;
 }
 
 .main {
     grid-column: 2 / 3;
+    padding: 50px;
+}
+
+table {
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+
+}
+
+thead {
+    font-size: 1.3rem;
+    background-color: var(--lighter);
+    border: none;
+
+}
+
+th {
+    padding: 10px 30px;
+    margin-left: 40px;
+}
+
+th:first-of-type {
+    padding: 10px 200px;
+}
+
+td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #105F82;
 }
