@@ -15,7 +15,7 @@
             <img id="logo" src="library-outline.svg" aria-hidden="true" alt="Library Logo">
             <h1>Library</h1>
         </div>
-        <form action="#" aria-description="Input book information to have a table of all the books in your library">
+        <form aria-description="Input book information to have a table of all the books in your library">
                     <div>
                         <label for="title">Title: <span aria-label="required"></span></label>
                         <input id="title" type="text" name="title" required>
@@ -30,7 +30,7 @@
                     </div>
                     <div id="radio">
                         <div>
-                            <label for="radio" id="radio-label">Did you finish the book?</label><br>
+                            <label id="radio-label">Did you finish this book?</label><br>
                         </div>
                         <div>
                             <input type="radio" id="read" name="read" value="yes" required>
@@ -41,7 +41,7 @@
                             <label for="no">No</label><br>  
                         </div>
                     </div>
-                <button onClick="addBookToLibrary()" type="submit" id="submit"><label for="submit">Add New Book</label></button>
+                <button type="submit" onclick="addBookToLibrary()" id="submit"><label for="submit">Add New Book</label></button>
         </form>
     </div>
     <div class="main">
@@ -56,27 +56,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Harry Potter and the Sorcerers Stone</td>
-                    <td>Joanne Rowling</td>
-                    <td>369</td>
-                    <td>No</td>
-                    <td>✖</td>
-                </tr>
-                <tr>
-                    <td>Harry Potter and the Sorcerers Stone</td>
-                    <td>Joanne Rowling</td>
-                    <td>369</td>
-                    <td>No</td>
-                    <td>✖</td>
-                </tr>
-                <tr>
-                    <td>Harry Potter and the Sorcerers Stone</td>
-                    <td>Joanne Rowling</td>
-                    <td>369</td>
-                    <td>No</td>
-                    <td>✖</td>
-                </tr>
             </tbody>
         </table>
     </div>
