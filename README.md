@@ -18,6 +18,6 @@ Project from [The Odin Project](https://www.theodinproject.com/)
 
 Welcome to my Library app! Input book data in the form and submit. Every book is made into an object and pushed into an array. The form is validated with JavaScript. Data is showcased in a table through DOM manipulation with JavaScript. Users can change read status by clicking 'yes' or 'no' in the finished column. Users can remove a book from the table by clicking the '✖'. Read status and removal status is updated in objects and the array as the user changes or removes data.
 
-![Screenshot of User Interface](./Screenshot.png)
+![Screenshot of User Interface](./Screenshot.PNG)
 
 Thank You for taking the time to look at my work!
