@@ -30,7 +30,7 @@
                     </div>
                     <div id="radio">
                         <div>
-                            <label id="radio-label">Did you finish the book?</label><br>
+                            <label for="radio" id="radio-label">Did you finish the book?</label><br>
                         </div>
                         <div>
                             <input type="radio" id="read" name="read" value="yes" required>
@@ -41,7 +41,7 @@
                             <label for="no">No</label><br>  
                         </div>
                     </div>
-                <button type="submit" id="submit"><label for="submit">Add New Book</label></button>
+                <button onClick="addBookToLibrary()" type="submit" id="submit"><label for="submit">Add New Book</label></button>
         </form>
     </div>
     <div class="main">
