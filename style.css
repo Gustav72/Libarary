@@ -18,7 +18,7 @@ body {
     grid-column: 1 / 2;
     background-color: var(--lighter);
     color: white;
-    height: 100vh;
+    height: max(100%, 100vh);
     padding: 0px 30px;
     display: flex;
     flex-direction: column;
