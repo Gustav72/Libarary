@@ -11,12 +11,24 @@ function Book() {
 }
 
 
-function switchStatus(i) {
-    console.log(i);
+function switchStatus(j) {
+    let status = document.getElementById('finish' + j)
+    if (status.innerText == 'yes') {
+        status.innerText = 'no';
+        status.style.color = "red";
+        myLibrary[j - 1].read = 'no'
+    }
+    else {
+        status.innerText = 'yes';
+        status.style.color = "green";
+        myLibrary[j - 1].read = 'yes'
+    }
 }
 
 function remove(row) {
    document.getElementById(row).remove();
+    delete myLibrary[row-1]
+
 }
 
 
