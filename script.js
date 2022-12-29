@@ -1,6 +1,6 @@
 let myLibrary = [];
-
-let form;
+let i = 0;
+const form = document.querySelector('form');
 
 function Book() {
     this.title = title;
@@ -10,19 +10,43 @@ function Book() {
 
 }
 
+
+function switchStatus(i) {
+    console.log(i);
+}
+
+function remove(row) {
+   document.getElementById(row).remove();
+}
+
+
 function addBookToLibrary() {
-    form = document.querySelector('form').addEventListener('submit', 
+
+    i++;
+
+    form.addEventListener('submit', 
     function(event) {
         event.preventDefault()
     });
 
     let newBook = new Book();
-    newBook.title = document.getElementById('title').value
-    newBook.author = document.getElementById('author').value
-    newBook.pages = document.getElementById('pages').value
-    newBook.read = document.getElementById('read').value
+    let title = document.getElementById('title').value
+    let author = document.getElementById('author').value
+    let pages = document.getElementById('pages').value
+    let read = document.querySelector('input[name="read"]:checked').value;
+
+    if(title == '' || author == '' || pages == '' || read == '' ) return;
+
+    newBook.title = title;
+    newBook.author = author;
+    newBook.pages = pages;
+    newBook.read = read;
+
+    myLibrary.push(newBook);
+
 
     const table = document.querySelector('tbody');
+
     const row = document.createElement('tr')
 
     let cell1 = document.createElement('td');
@@ -30,6 +54,14 @@ function addBookToLibrary() {
     let cell3 = document.createElement('td');
     let cell4 = document.createElement('td');
     let cell5 = document.createElement('td');
+
+    row.setAttribute('id', i);
+
+    cell5.setAttribute('onclick', 'remove(' + i + ')');
+
+    cell4.setAttribute('onclick', 'switchStatus(' + i + ')');
+    cell4.setAttribute('id', 'finish' + i);
+
 
 
     cell1.innerText = newBook.title;
@@ -45,7 +77,18 @@ function addBookToLibrary() {
     row.appendChild(cell5);
 
     table.appendChild(row);
+    
 
-    console.log('hi');
+    newBook.title = document.getElementById('title').value
+    newBook.author = document.getElementById('author').value
+    newBook.pages = document.getElementById('pages').value
+    newBook.read = document.getElementById('read').value
+
+    if (read == 'yes') document.getElementById('finish' + i).style.color = "green";
+    else document.getElementById('finish' + i).style.color = "red";
+
+    form.reset();
+    
+    console.log(read);
 
 }
