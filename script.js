@@ -26,8 +26,8 @@ function switchStatus(j) {
 }
 
 function remove(row) {
-   document.getElementById(row).remove();
-    delete myLibrary[row-1]
+   document.getElementById(row).remove(); //delete from DOM
+    delete myLibrary[row-1] //delete from array
 
 }
 
