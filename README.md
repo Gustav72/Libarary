@@ -20,7 +20,7 @@ Project from [The Odin Project](https://www.theodinproject.com/)
 
 Welcome to my Library app!
 
-Users are now able to sign in and save their libraries using Firebase's backend as a service.
+Please sign in and try out! You are now able to sign in and save their libraries using Firebase's backend as a service.
 
 Input book data in the form and submit. Every book is made into an object and pushed into an array. The form is validated with JavaScript. Data is showcased in a table through DOM manipulation with JavaScript. Users can change read status by clicking 'yes' or 'no' in the finished column. Users can remove a book from the table by clicking the '✖'. Read status and removal status is updated in both the object and the array as the user changes or removes data.
 
