@@ -1,5 +1,8 @@
-//Array for books
-let myLibrary = [];
+import "./styles/style.css";
+import "./styles/normalize.css";
+import logo from "./assets/library-outline.svg";
+
+let myLibrary = []; //Array for books
 let i = 0;
 const form = document.querySelector("form");
 
@@ -10,7 +13,9 @@ function Book() {
   this.read = read;
 }
 
-function switchStatus(j) {
+function doNothing() {}
+
+window.switchStatus = function (j) {
   let status = document.getElementById("finish" + j);
   if (status.innerText == "yes") {
     status.innerText = "no";
@@ -21,14 +26,14 @@ function switchStatus(j) {
     status.style.color = "green";
     myLibrary[j - 1].read = "yes";
   }
-}
+};
 
-function remove(row) {
+window.remove = function (row) {
   document.getElementById(row).remove(); //delete from DOM
   delete myLibrary[row - 1]; //delete from array
-}
+};
 
-function addBookToLibrary() {
+window.addBookToLibrary = function () {
   i++;
 
   form.addEventListener("submit", function (event) {
@@ -36,10 +41,16 @@ function addBookToLibrary() {
   });
 
   let newBook = new Book();
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let read = document.querySelector('input[name="read"]:checked').value;
+
+  let title = "";
+  let author = "";
+  let pages = "";
+  let read = "";
+
+  title = document.getElementById("title").value;
+  author = document.getElementById("author").value;
+  pages = document.getElementById("pages").value;
+  read = document.querySelector('input[name="read"]:checked').value;
 
   if (title == "" || author == "" || pages == "" || read == "") return;
 
@@ -93,6 +104,6 @@ function addBookToLibrary() {
   form.reset();
 
   console.log(read);
-}
+};
 
 //thank you for checking out my code!
