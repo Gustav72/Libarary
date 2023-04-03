@@ -6,7 +6,7 @@ let myLibrary = []; //Array for books
 let i = 0;
 const form = document.querySelector("form");
 
-function Book() {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -40,19 +40,17 @@ window.addBookToLibrary = function () {
     event.preventDefault();
   });
 
-  let newBook = new Book();
-
-  let title = "";
-  let author = "";
-  let pages = "";
-  let read = "";
-
-  title = document.getElementById("title").value;
-  author = document.getElementById("author").value;
-  pages = document.getElementById("pages").value;
-  read = document.querySelector('input[name="read"]:checked').value;
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let pages = document.getElementById("pages").value;
+  const checkedRadioButton = document.querySelector(
+    'input[name="read"]:checked'
+  );
+  let read = checkedRadioButton ? checkedRadioButton.value : "";
 
   if (title == "" || author == "" || pages == "" || read == "") return;
+
+  let newBook = new Book(title, author, pages, read);
 
   newBook.title = title;
   newBook.author = author;
