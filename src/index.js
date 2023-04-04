@@ -2,6 +2,23 @@ import "./styles/style.css";
 import "./styles/normalize.css";
 import logo from "./assets/library-outline.svg";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBr_yTCIIio_3BUdzApsYlyfj10_liJkt8",
+  authDomain: "library-f807c.firebaseapp.com",
+  projectId: "library-f807c",
+  storageBucket: "library-f807c.appspot.com",
+  messagingSenderId: "684727164898",
+  appId: "1:684727164898:web:0bd572f50fcc1d97bae3bb",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 let myLibrary = []; //Array for books
 let i = 0;
 const form = document.querySelector("form");
