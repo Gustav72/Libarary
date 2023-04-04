@@ -1,16 +1,38 @@
-//Array for books
-let myLibrary = [];
+import "./styles/style.css";
+import "./styles/normalize.css";
+import logo from "./assets/library-outline.svg";
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBr_yTCIIio_3BUdzApsYlyfj10_liJkt8",
+  authDomain: "library-f807c.firebaseapp.com",
+  projectId: "library-f807c",
+  storageBucket: "library-f807c.appspot.com",
+  messagingSenderId: "684727164898",
+  appId: "1:684727164898:web:0bd572f50fcc1d97bae3bb",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+let myLibrary = []; //Array for books
 let i = 0;
 const form = document.querySelector("form");
 
-function Book() {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
 
-function switchStatus(j) {
+function doNothing() {}
+
+window.switchStatus = function (j) {
   let status = document.getElementById("finish" + j);
   if (status.innerText == "yes") {
     status.innerText = "no";
@@ -21,27 +43,31 @@ function switchStatus(j) {
     status.style.color = "green";
     myLibrary[j - 1].read = "yes";
   }
-}
+};
 
-function remove(row) {
+window.remove = function (row) {
   document.getElementById(row).remove(); //delete from DOM
   delete myLibrary[row - 1]; //delete from array
-}
+};
 
-function addBookToLibrary() {
+window.addBookToLibrary = function () {
   i++;
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
   });
 
-  let newBook = new Book();
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
-  let read = document.querySelector('input[name="read"]:checked').value;
+  const checkedRadioButton = document.querySelector(
+    'input[name="read"]:checked'
+  );
+  let read = checkedRadioButton ? checkedRadioButton.value : "";
 
   if (title == "" || author == "" || pages == "" || read == "") return;
+
+  let newBook = new Book(title, author, pages, read);
 
   newBook.title = title;
   newBook.author = author;
@@ -93,6 +119,6 @@ function addBookToLibrary() {
   form.reset();
 
   console.log(read);
-}
+};
 
 //thank you for checking out my code!
